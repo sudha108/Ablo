@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/imanageusers"
+        android:title="Manage Users"
+        android:layout_width="wrap_content"/>
+
+    <item
+        android:id="@+id/iaddnewuser"
+        android:title="Add a new user"
+        android:layout_width="wrap_content"/>
+
+    <item
+        android:id="@+id/isetrules"
+        android:title="Set Limit time for apps"
+        android:layout_width="wrap_content"/>
+
+    <item
+        android:id="@+id/isettimings"
+        android:title="Set work timings"
+        android:layout_width="wrap_content"/>
+
+    <item
+        android:id="@+id/iprofileadmin"
+        android:title="Profile" />
+
+    <item
+        android:id="@+id/optoutadmin"
+        android:title="Opt Out" />
+
+</menu>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context="com.ablo.UserViewActivity">
+
+
+    <TextView
+        android:id="@+id/tvUserViewtitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="12dp"
+        android:textAlignment="center"
+        android:textColor="@color/colorAccent"
+        android:textSize="32sp" />
+
+
+    <TextView
+        android:id="@+id/listtitle2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvUserViewtitle"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="17dp"
+        android:text="Your List of Apps and their Running Times"
+        android:textColor="@color/colorAccent" />
+
+    <ListView
+        android:id="@+id/runlist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/listtitle2"
+        android:layout_marginTop="15dp"/>
+
+    <ProgressBar
+        android:id="@+id/progressBar4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="visible"
+        />
+</RelativeLayout>

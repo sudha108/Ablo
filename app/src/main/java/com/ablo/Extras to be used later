@@ -1,0 +1,74 @@
+-----------------
+
+"Alarmmanager:"
+
+Global Declarations:-
+
+private PendingIntent pendingIntent;
+private AlarmManager manager;
+
+In onCreate:-
+
+Intent alarmIntent = new Intent(this, AlarmReceiver.class);
+pendingIntent = PendingIntent.getBroadcast(this, 0, alarmIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+
+In View content:-
+
+startAlarm(v);
+
+Function:-
+
+ public void startAlarm(View view) {
+        manager = (AlarmManager)getSystemService(Context.ALARM_SERVICE);
+        int interval = 200; // 10 seconds
+
+        manager.setRepeating(AlarmManager.RTC_WAKEUP, System.currentTimeMillis(), interval, pendingIntent);
+        //alarm type, when to first trigger, intervals, action to perform
+
+    }
+
+-------------------
+
+"Notification:"
+
+In View content:-
+
+sendNotification(v);
+
+Function:-
+
+ public void sendNotification(View view) {
+
+        NotificationCompat.Builder mBuilder =
+                new NotificationCompat.Builder(this);
+
+        //Create the intent that’ll fire when the user taps the notification//
+
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, new Intent(this, ManageUsersActivity.class), 0);
+
+        mBuilder.setContentIntent(pendingIntent);
+
+        mBuilder.setSmallIcon(R.drawable.icon);
+        mBuilder.setContentTitle("Some of Your Subs Have gone!");
+        mBuilder.setContentText("Click to see the subs who have left");
+
+        NotificationManager mNotificationManager =
+
+                (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+
+        mNotificationManager.notify(001, mBuilder.build());
+    }
+
+-------------------
+
+"Get Another Application:"
+
+Intent intent = getPackageManager().getLaunchIntentForPackage("com.ma3ddom.listinstalledapps"); //package name
+if(intent!=null)
+startActivity(intent);
+
+-------------------
+
+ String appVersion = packageInfo.versionName;
+                int appVerCode = packageInfo.versionCode;
+                Drawable app_icon = packageInfo.applicationInfo.loadIcon(context.getPackageManager());
